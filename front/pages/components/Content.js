@@ -2,7 +2,9 @@ import React from 'react'
 
 function Content() {
   return (
-    <div>Content</div>
+    <div>
+      <div class="h-100 border-l mx-4"></div>
+    </div>
   )
 }
 
