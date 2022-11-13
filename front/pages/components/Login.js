@@ -5,8 +5,8 @@ function Login() {
     <section class="flex flex-col md:flex-row h-screen items-center">
       <div className="lg:flex items-center justify-center place-items-center hidden md:w-1/2 xl:w-2/3 h-screen bg-[#363C3C]">
           <svg
-            width="160"
-            height="48"
+            width="320"
+            height="96"
             viewBox="0 0 160 48"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -51,19 +51,18 @@ function Login() {
             </defs>
           </svg>
       </div>
-      <div className="w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center bg-[#FEFEFE]">
+      <div className="w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center bg-[#FDFCFA]">
         <div className="w-full h-100">
           <h1 className="mt-12 text-xl font-medium leading-tight md:text-2xl"> Welcome to your restaurant manangement </h1>
           <form class="mt-6" action="#" method="POST">
         <div>
           <label class="block text-gray-700">Email Address</label>
-          <input type="email" name="" id="" placeholder="Enter email address" class="w-full px-4 py-3 rounded-lg  mt-2 border focus:border-[#E8E8E8] focus:bg-white focus:outline-none" autofocus autocomplete required/>
+          <input type="email" name="" id="" placeholder="Enter email address" class="w-full px-4 py-3 rounded-lg  mt-2 border bg-[#F5F5F5] focus:bg-[#FFFFFF] border-none focus:outline-none" autofocus autocomplete required/>
         </div>
 
         <div class="mt-4">
           <label class="block text-gray-700">Password</label>
-          <input type="password" name="" id="" placeholder="Enter password" minlength="6" class="w-full px-4 py-3 rounded-lg  mt-2 border focus:border-[#E8E8E8]
-                focus:bg-white focus:outline-none" required/>
+          <input type="password" name="" id="" placeholder="Enter password" minlength="6" class="w-full px-4 py-3 rounded-lg  mt-2 border bg-[#F5F5F5] focus:bg-[#FFFFFF] border-none focus:outline-none" required/>
         </div>
 
         <div class="text-right mt-2">
