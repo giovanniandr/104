@@ -4,6 +4,8 @@ function Navbar() {
   return (
     <div className="float-left flex h-screen bg-[#FEFEFE]">
       <aside className="flex flex-col items-center h-full text-gray-700 bg-white shadow w-1/">
+        <div className="h-16 flex items-center w-full"> </div>
+
         <div className="h-16 flex items-center w-full">
           <svg className="mx-auto"
             width="42"
@@ -20,6 +22,7 @@ function Navbar() {
         </div>
 
         <ul>
+          
           <li className="hover:bg-gray-100">
             <a
               href="."
