@@ -2,7 +2,7 @@ import React from 'react'
 
 function Login() {
   return (
-    <section class="flex flex-col md:flex-row h-screen items-center">
+    <section className="flex flex-col md:flex-row h-screen items-center">
       <div className="lg:flex items-center justify-center place-items-center hidden md:w-1/2 xl:w-2/3 h-screen bg-[#363C3C]">
           <svg
             width="320"
@@ -54,7 +54,7 @@ function Login() {
       <div className="w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center bg-[#FDFCFA]">
         <div className="w-full h-100">
           <h1 className="mt-12 text-xl font-medium leading-tight md:text-2xl"> Welcome to Restaurant Manangement </h1>
-          <form class="mt-6" action="#" method="POST">
+          <form className="mt-6" action="#" method="POST">
         <div>
           <label className="block text-gray-700">Email Address</label>
           <input type="email" name="" id="" placeholder="Enter email address" className="w-full px-4 py-3 rounded-lg  mt-2 border bg-[#F5F5F5] focus:bg-[#FFFFFF] border-none focus:outline-none" autofocus autocomplete required/>
