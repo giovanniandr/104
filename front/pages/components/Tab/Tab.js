@@ -1,44 +1,110 @@
 import React from "react";
-import { useState } from "react";
+import { styled } from '@mui/system';
+import TabsUnstyled from '@mui/base/TabsUnstyled';
+import TabsListUnstyled from '@mui/base/TabsListUnstyled';
+import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
+import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
+import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
 
 function Tab() {
-  const [toggleState, setToggleState] = useState(1);
-  const toggleTab = (index) => {
-    setToggleState(index);
-  }
-  
-  const active = "inline-block p-4 bg-red rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300";
-  const inactive = "text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300";
 
+    const blue = {
+        50: '#F0F7FF',
+        100: '#C2E0FF',
+        200: '#80BFFF',
+        300: '#66B2FF',
+        400: '#3399FF',
+        500: '#007FFF',
+        600: '#0072E5',
+        700: '#0059B2',
+        800: '#004C99',
+        900: '#003A75',
+      };
+      
+      const grey = {
+        50: '#f6f8fa',
+        100: '#eaeef2',
+        200: '#d0d7de',
+        300: '#afb8c1',
+        400: '#8c959f',
+        500: '#6e7781',
+        600: '#57606a',
+        700: '#424a53',
+        800: '#32383f',
+        900: '#24292f',
+      };
+
+    const Tab = styled(TabUnstyled)`
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background-color: transparent;
+    width: 100%;
+    padding: 10px 12px;
+    margin: 6px 6px;
+    border: none;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+  
+    &:hover {
+      background-color: ${blue[400]};
+    }
+  
+    &:focus {
+      color: #fff;
+      outline: 3px solid ${blue[200]};
+    }
+  
+    &.${tabUnstyledClasses.selected} {
+      background-color: #fff;
+      color: ${blue[600]};
+    }
+  
+    &.${buttonUnstyledClasses.disabled} {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  `;
+  
+  const TabPanel = styled(TabPanelUnstyled)(
+    ({ theme }) => `
+    width: 100%;
+    font-size: 0.875rem;
+    padding: 20px 12px;
+    background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
+    border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
+    border-radius: 12px;
+    opacity: 0.6;
+    `,
+  );
+  
+  const TabsList = styled(TabsListUnstyled)(
+    ({ theme }) => `
+    min-width: 400px;
+    background-color: ${blue[500]};
+    border-radius: 12px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
+    box-shadow: 0px 4px 30px ${theme.palette.mode === 'dark' ? grey[900] : grey[200]};
+    `,
+  );
 
   return (
-    <div>
-      <div>
-        <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
-          <li onClick={() => { toggleTab(1)}} class="mr-2">
-          <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">
-              Breakfast
-            </a>
-          </li>
-
-          <li onClick={() => { toggleTab(2)}} class="mr-2">
-            <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">
-              Lunch
-            </a>
-          </li>
-
-          <li onClick={() => { toggleTab(3)}} class="mr-2">
-            <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">
-              Dinner
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div hidden={toggleState === 1 ? active : inactive}> Content 1</div>
-      <div hidden={toggleState === 2 ? active : inactive}> Content 2</div>
-      <div hidden={toggleState === 3 ? active : inactive}> Content 3</div>
-    </div>
+    <TabsUnstyled defaultValue={0}>
+    <TabsList>
+      <Tab>My account</Tab>
+      <Tab>Profile</Tab>
+      <Tab>Language</Tab>
+    </TabsList>
+    <TabPanel value={0}>My account page</TabPanel>
+    <TabPanel value={1}>Profile page</TabPanel>
+    <TabPanel value={2}>Language page</TabPanel>
+  </TabsUnstyled>
   );
 }
 export default Tab;
