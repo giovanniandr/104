@@ -95,11 +95,11 @@ function Tab() {
   );
 
   return (
-    <TabsUnstyled defaultValue={0}>
+    <TabsUnstyled defaultValue={0} className="bg-red-200 flex-1">
     <TabsList>
-      <Tab>My account</Tab>
-      <Tab>Profile</Tab>
-      <Tab>Language</Tab>
+      <Tab>Breakfast</Tab>
+      <Tab>Lunch</Tab>
+      <Tab>Dinner</Tab>
     </TabsList>
     <TabPanel value={0}>My account page</TabPanel>
     <TabPanel value={1}>Profile page</TabPanel>
