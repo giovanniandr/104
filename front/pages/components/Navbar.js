@@ -2,7 +2,7 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div className="flex h-screen bg-[#FEFEFE]">
+    <div className="flex h-screen relative bg-[#FEFEFE]">
       <aside className="flex flex-col items-center h-full text-gray-700 bg-white shadow w-1/">
         <div className="h-16 flex items-center w-full"> </div>
 

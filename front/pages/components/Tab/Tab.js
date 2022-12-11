@@ -35,7 +35,7 @@ function Tab() {
       };
 
     const Tab = styled(TabUnstyled)`
-    color: #fff;
+    color: #7D7D7D;
     cursor: pointer;
     font-size: 0.875rem;
     font-weight: 600;
@@ -49,17 +49,17 @@ function Tab() {
     justify-content: center;
   
     &:hover {
-      background-color: ${blue[400]};
+      background-color: #FFFFFF;
     }
   
     &:focus {
+      outline: none;
       color: #fff;
-      outline: 3px solid ${blue[200]};
     }
   
     &.${tabUnstyledClasses.selected} {
-      background-color: #fff;
-      color: ${blue[600]};
+      background-color: #FFFFFF;
+      color: #363C3C;
     }
   
     &.${buttonUnstyledClasses.disabled} {
@@ -83,28 +83,34 @@ function Tab() {
   const TabsList = styled(TabsListUnstyled)(
     ({ theme }) => `
     min-width: 400px;
-    background-color: ${blue[500]};
+    background-color: #F5F5F5;
     border-radius: 12px;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     align-content: space-between;
-    box-shadow: 0px 4px 30px ${theme.palette.mode === 'dark' ? grey[900] : grey[200]};
     `,
   );
 
   return (
-    <TabsUnstyled defaultValue={0} className="bg-red-200 flex-1">
-    <TabsList>
+    <div className="w-full ml-6 mr-20"> 
+
+    <h1 className=" ml-6 mr-6 mb-6 float-left text-2xl font-medium text-[#363C3C]"> Menu </h1>
+    <TabsUnstyled defaultValue={0} className=" ">
+    <TabsList className="w-2/4 mb-6">
       <Tab>Breakfast</Tab>
       <Tab>Lunch</Tab>
       <Tab>Dinner</Tab>
+      <Tab>Add</Tab>
     </TabsList>
-    <TabPanel value={0}>My account page</TabPanel>
-    <TabPanel value={1}>Profile page</TabPanel>
-    <TabPanel value={2}>Language page</TabPanel>
+    <div class="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700"> </div>
+    <TabPanel value={0}>Breakfast page</TabPanel>
+    <TabPanel value={1}>Lunch page</TabPanel>
+    <TabPanel value={2}>Dinner page</TabPanel>
+    <TabPanel value={3}>Add new menu</TabPanel>
   </TabsUnstyled>
+  </div>
   );
 }
 export default Tab;
