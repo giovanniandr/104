@@ -5,22 +5,10 @@ import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
+import Dropdown from "../Dropdown";
 
 function Tab() {
 
-    const blue = {
-        50: '#F0F7FF',
-        100: '#C2E0FF',
-        200: '#80BFFF',
-        300: '#66B2FF',
-        400: '#3399FF',
-        500: '#007FFF',
-        600: '#0072E5',
-        700: '#0059B2',
-        800: '#004C99',
-        900: '#003A75',
-      };
-      
       const grey = {
         50: '#f6f8fa',
         100: '#eaeef2',
@@ -104,8 +92,11 @@ function Tab() {
       <Tab>Dinner</Tab>
       <Tab>Add</Tab>
     </TabsList>
-    <div class="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700"> </div>
-    <TabPanel value={0}>Breakfast page</TabPanel>
+    <div className="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700"> </div>
+    <TabPanel value={0}>
+      <Dropdown />
+
+     </TabPanel>
     <TabPanel value={1}>Lunch page</TabPanel>
     <TabPanel value={2}>Dinner page</TabPanel>
     <TabPanel value={3}>Add new menu</TabPanel>
