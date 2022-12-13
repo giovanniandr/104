@@ -96,8 +96,12 @@ function Tab() {
       <Cards />
 
      </TabPanel>
-    <TabPanel value={1}>Lunch page</TabPanel>
-    <TabPanel value={2}>Dinner page</TabPanel>
+    <TabPanel value={1}>
+      <Dropdown />
+    </TabPanel>
+    <TabPanel value={2}>
+      <Dropdown />
+    </TabPanel>
     <TabPanel value={3}>Add new menu</TabPanel>
   </TabsUnstyled>
   </div>
