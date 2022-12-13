@@ -5,7 +5,9 @@ import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
-import Dropdown from "../Dropdown";
+
+import Dropdown from "./Dropdown";
+import Cards from "./Cards";
 
 function Tab() {
 
@@ -60,11 +62,6 @@ function Tab() {
     ({ theme }) => `
     width: 100%;
     font-size: 0.875rem;
-    padding: 20px 12px;
-    background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
-    border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-    border-radius: 12px;
-    opacity: 0.6;
     `,
   );
   
@@ -92,9 +89,11 @@ function Tab() {
       <Tab>Dinner</Tab>
       <Tab>Add</Tab>
     </TabsList>
-    <div className="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700"> </div>
-    <TabPanel value={0}>
+    
+    <div className="my-8 h-px w-[99.5%] bg-gray-200 border-0 dark:bg-gray-700"> </div>
+    <TabPanel value={0} className="w-[90%] h-screen fixed">
       <Dropdown />
+      <Cards />
 
      </TabPanel>
     <TabPanel value={1}>Lunch page</TabPanel>

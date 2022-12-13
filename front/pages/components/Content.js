@@ -4,7 +4,7 @@ import Tab from "./Tab/Tab";
 function Content() {
 
   return (
-    <main className="w-screen mt-20 bg-[#FEFEFE] flex">
+    <main className="w-screen flex mt-20 bg-[#FEFEFE] ">
         <Tab />
     </main>
   );
